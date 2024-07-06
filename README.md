@@ -134,3 +134,66 @@ Price   Region State        Units
 640.72  North  North Dakota   789
 508.55  South  Delaware       712
 ```
+
+## CLI API
+The PSDuckDB CLI (Command Line Interface) is simple cli interface. 
+
+```powershell
+PS C:\> psduckdb
+```
+
+```ps
+Welcome to PSDuckDB! 07/06/2024 13:03:42
+Connected to a transient in-memory database
+
+PSDuckDB:
+```
+
+### Examples
+
+Select a string.
+```powershell
+PSDuckDB: select 'quack' as my_col
+
+my_col
+------
+quack
+```
+
+Generate a series of numbers from 0 to 5.
+```powershell
+PSDuckDB: SELECT * FROM generate_series(5);
+
+generate_series
+---------------
+              0
+              1
+              2
+              3
+              4
+              5
+```
+
+Read a parquet file from a local path.
+
+```powershell
+PSDuckDB: select * from 'D:\yourpath\sales.parquet'
+
+Units Region Price   State
+----- ------ -----   -----
+  927 West   923.71  Texas
+  466 North  770.67  Tennessee
+  520 East   458.68w Florida
+  828 East   661.24  Maine
+  465 West   53.58   Virginia
+  436 North  235.67  Missouri
+  214 South  992.47  Kansas
+  789 North  640.72  North Dakota
+  712 South  508.55  Delaware
+```
+
+## Development
+
+Please also refer the the [Contribution Guide](CONTRIBUTING.md).
+
+
