@@ -1,0 +1,5 @@
+Region,State,Units,Price,Tag,Source
+West,Texas,927,923.71,Sales1,csv
+North,Tennessee,466,770.67,Sales1,csv
+East,Florida,520,458.68,Sales1,csv
+East,Maine,828,661.24,Sales1,csv
