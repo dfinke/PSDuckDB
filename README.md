@@ -32,6 +32,8 @@ DuckDB's development started while the main developers were public servants in t
 
 Check out the `SQL Introduction` and details for `DuckDB` https://duckdb.org/docs/sql/introduction
 
+Refer to the [Data Import](https://duckdb.org/docs/data/overview) section for more information.
+
 ### Basic 
 [basic.ps1](examples/01-basic.ps1)
 
