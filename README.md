@@ -3,6 +3,11 @@ PSDuckDB is a PowerShell module that provides seamless integration with DuckDB, 
 
 https://duckdb.org/why_duckdb
 
+## Installation
+
+```powershell
+Install-Module PSDuckDB 
+```
 ## Why DuckDB
 There are many database management systems (DBMS) out there. But there is no one-size-fits all database system. All take different trade-offs to better adjust to specific use cases. DuckDB is no different.
 
