@@ -111,3 +111,24 @@ Amsterdam     NL      1005 1065 1158
 New York City US      8015 8175 8772
 Seattle       US       564  608  738
 ```
+
+### Import Parquet Files
+[read-parquet](examples/08-read-parquet.ps1)
+
+```powershell
+psduckdb -c "SELECT * FROM '$PSScriptRoot\..\data\parquet\sales.parquet';" | Format-Table
+```
+
+```powershell
+Price   Region State        Units
+-----   ------ -----        -----
+923.71  West   Texas          927
+770.67  North  Tennessee      466
+458.68w East   Florida        520
+661.24  East   Maine          828
+53.58   West   Virginia       465
+235.67  North  Missouri       436
+992.47  South  Kansas         214
+640.72  North  North Dakota   789
+508.55  South  Delaware       712
+```
