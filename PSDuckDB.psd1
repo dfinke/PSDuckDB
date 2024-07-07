@@ -28,6 +28,7 @@ PSDuckDB is a PowerShell module that provides seamless integration with DuckDB, 
     # Functions to export from this module
     FunctionsToExport  = @(
         'Invoke-PSDuckDB'
+        'New-DuckDBConnection'
     )
 
     # Aliases to export from this module
