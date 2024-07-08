@@ -44,41 +44,48 @@ USING sum(Population);
 
         Write-Host "Welcome to PSDuckDB! $(Get-Date)"
         Write-Host 'Connected to ' -NoNewline
-        if($FileName -eq ":memory:") {
+        if ($FileName -eq ":memory:") {
             Write-Host 'an in-memory database' -ForegroundColor Red
         }
         else {
             Write-Host $FileName -ForegroundColor Red
         }
         
-        $conn = New-DuckDBConnection -Path $FileName
-        $conn.Open()
-        $duckCommand = $conn.CreateCommand()
+        try {
+            $conn = New-DuckDBConnection -Path $FileName
+            $conn.Open()
+            $duckCommand = $conn.CreateCommand()
 
-        while ($true) {
-            $targetCommand = Read-Host "PSDuckDB"
+            while ($true) {
+                $targetCommand = Read-Host "PSDuckDB"
         
-            if ($targetCommand -in $ExitOn) {
-                break
-            }
+                if ($targetCommand -in $ExitOn) {
+                    break
+                }
 
-            try {
-                $duckCommand.CommandText = $targetCommand
-                $reader = $duckCommand.ExecuteReader()
+                try {
+                    $duckCommand.CommandText = $targetCommand
+                    $reader = $duckCommand.ExecuteReader()
             
-                Out-DuckData $reader | Format-Table
+                    # Out-DuckData $reader | Format-Table
+                    Out-DuckData $reader | ConvertTo-Json -Depth 10
+                }
+                catch {
+                    Write-Host $_.Exception.Message -ForegroundColor Red
+                }
             }
-            catch {
-                Write-Host $_.Exception.Message -ForegroundColor Red
+        
+            if ($null -ne $reader) {
+                $reader.Dispose()
             }
         }
-        
-        if ($null -ne $reader) {
-            $reader.Dispose()
+        catch {
+            Write-Host $_.Exception.Message -ForegroundColor Red
         }
-        
-        $duckCommand.Dispose()
-        $conn.Close()
+        finally {       
+            $duckCommand.Dispose()
+            $conn.Close()
+        }
     }
 
 }
