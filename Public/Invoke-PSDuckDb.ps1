@@ -9,15 +9,15 @@ USING sum(Population);
     #>
     [CmdletBinding()]
     [Alias('psduckdb')]
-    param(        
+    param(
+        [string]$FileName,
         [string]$Command
     )
-
-    $conn = [DuckDB.NET.Data.DuckDBConnection]::new("Data Source=:memory:")
-    $conn.Open()
-    $duckCommand = $conn.CreateCommand()
-
-    if (![string]::IsNullOrEmpty($Command)) {
+    
+    if (![string]::IsNullOrEmpty($Command)) {        
+        $conn = New-DuckDBConnection
+        $conn.Open()
+        $duckCommand = $conn.CreateCommand()
         $duckCommand.CommandText = $Command
 
         try {
@@ -37,10 +37,23 @@ USING sum(Population);
     }
     else {
         $ExitOn = @("exit", "quit", "bye")
+        
+        if ([string]::IsNullOrEmpty($FileName)) {
+            $FileName = ":memory:"
+        }
 
         Write-Host "Welcome to PSDuckDB! $(Get-Date)"
         Write-Host 'Connected to ' -NoNewline
-        Write-Host 'a transient in-memory database' -ForegroundColor Red
+        if($FileName -eq ":memory:") {
+            Write-Host 'an in-memory database' -ForegroundColor Red
+        }
+        else {
+            Write-Host $FileName -ForegroundColor Red
+        }
+        
+        $conn = New-DuckDBConnection -Path $FileName
+        $conn.Open()
+        $duckCommand = $conn.CreateCommand()
 
         while ($true) {
             $targetCommand = Read-Host "PSDuckDB"
