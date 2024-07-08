@@ -1,3 +1,5 @@
+# https://www.pgrs.net/2024/03/21/duckdb-as-the-new-jq/
+
 # Define a parameter for the script, allowing the user to specify a GitHub username
 param(
   $user = 'dfinke'  # Default GitHub username if none is provided
