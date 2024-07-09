@@ -1,0 +1,6 @@
+CustomerID,FirstName,LastName,Email,Phone,Address,City,State,ZipCode,Country
+1,John,Doe,john.doe@example.com,555-1234,123 Elm St,Springfield,IL,62701,USA
+2,Jane,Smith,jane.smith@example.com,555-5678,456 Oak St,Greenfield,IN,46140,USA
+3,Bob,Johnson,bob.johnson@example.com,555-8765,789 Pine St,Laketown,WI,53001,USA
+4,Alice,Williams,alice.williams@example.com,555-4321,101 Maple St,Winterville,NC,28590,USA
+5,Michael,Brown,michael.brown@example.com,555-6789,202 Birch St,Somerville,MA,02143,USA
