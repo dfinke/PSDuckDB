@@ -1,6 +1,6 @@
 Import-Module $psscriptroot\..\PSDuckDB.psd1 -Force
 
-# psduckdb -c "SELECT * FROM '$PSScriptRoot\..\data\csv\sample\*.csv';" | Format-Table
+# psduckdb -command "SELECT * FROM '$PSScriptRoot\..\data\csv\sample\*.csv';" | Format-Table
 
 $db = New-DuckDBConnection
 

@@ -1,3 +1,3 @@
 Import-Module $psscriptroot\..\PSDuckDB.psd1 -Force
 
-psduckdb -c "select 10+2"
+psduckdb -command "select 10+2"

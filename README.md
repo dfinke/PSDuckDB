@@ -40,7 +40,7 @@ Refer to the [Data Import](https://duckdb.org/docs/data/overview) section for mo
 [basic.ps1](examples/01-basic.ps1)
 
 ```powershell
-psduckdb -c "select 10+2"
+psduckdb -command "select 10+2"
 ```
 
 ```ps
@@ -53,7 +53,7 @@ psduckdb -c "select 10+2"
 [read-csv.p1](examples/02-read-csv.ps1)
 
 ```powershell
-psduckdb -c "SELECT * FROM '$PSScriptRoot\..\data\csv\sample\sales1.csv';" | Format-Table
+psduckdb -command "SELECT * FROM '$PSScriptRoot\..\data\csv\sample\sales1.csv';" | Format-Table
 ```
 
 ```powershell
@@ -78,7 +78,7 @@ Group By Item
 Order By Item;
 "@
 
-psduckdb -c $stmt | Format-Table
+psduckdb -command $stmt | Format-Table
 ```
 
 ```powershell
@@ -105,7 +105,7 @@ ON Year
 USING sum(Population);
 "@
 
-psduckdb -c $stmt | Format-Table
+psduckdb -command $stmt | Format-Table
 ```
 
 ```powershell
@@ -120,7 +120,7 @@ Seattle       US       564  608  738
 [read-parquet](examples/08-read-parquet.ps1)
 
 ```powershell
-psduckdb -c "SELECT * FROM '$PSScriptRoot\..\data\parquet\sales.parquet';" | Format-Table
+psduckdb -command "SELECT * FROM '$PSScriptRoot\..\data\parquet\sales.parquet';" | Format-Table
 ```
 
 ```powershell

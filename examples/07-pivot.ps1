@@ -10,4 +10,4 @@ ON Year
 USING sum(Population);
 "@
 
-psduckdb -c $stmt | Format-Table
+psduckdb -command $stmt | Format-Table
