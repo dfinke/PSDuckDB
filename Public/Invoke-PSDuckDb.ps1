@@ -11,7 +11,9 @@ USING sum(Population);
     [Alias('psduckdb')]
     param(
         [string]$FileName,
-        [string]$Command
+        [string]$Command,
+        [switch]$json,
+        [switch]$csv
     )
     
     if (![string]::IsNullOrEmpty($Command)) {        
@@ -67,24 +69,38 @@ USING sum(Population);
                     $duckCommand.CommandText = $targetCommand
                     $reader = $duckCommand.ExecuteReader()
             
-                    # Out-DuckData $reader | Format-Table
-                    Out-DuckData $reader | ConvertTo-Json -Depth 10
+                    $returnData = Out-DuckData $reader
+                    if ($json) {
+                        $returnData | ConvertTo-Json
+                    }
+                    elseif ($csv) {
+                        $returnData | ConvertTo-Csv
+                    } 
+                    else {
+                        $returnData
+                    }
                 }
                 catch {
                     Write-Host $_.Exception.Message -ForegroundColor Red
                 }
             }
         
-            if ($null -ne $reader) {
-                $reader.Dispose()
-            }
         }
         catch {
             Write-Host $_.Exception.Message -ForegroundColor Red
         }
         finally {       
-            $duckCommand.Dispose()
-            $conn.Close()
+            if ($null -ne $reader) {
+                $reader.Dispose()
+            }
+            
+            if ($null -ne $duckCommand) {
+                $duckCommand.Dispose()
+            }
+            
+            if ($null -ne $conn -and $conn.State -eq 'Open') {
+                $conn.Close()
+            }
         }
     }
 
