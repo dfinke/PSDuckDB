@@ -30,6 +30,42 @@ DuckDB is designed to support analytical query workloads, also known as [online 
 ## Free
 DuckDB's development started while the main developers were public servants in the Netherlands. 
 
+## Use PSDuckDB - ADO.NET Style
+
+In our ever-evolving world of data manipulation, the ability to efficiently pivot datasets can reveal new insights and trends. This example leverages PowerShell to dynamically transform city population data from a CSV file, enabling a year-over-year comparison. Let's dive into the process of creating a pivot table using PowerShell and DuckDB.
+
+First, we establish a connection to DuckDB and create a table from our CSV dataset. This forms the foundation for our pivot operation, setting the stage for extracting valuable insights from raw data.
+
+```powershell
+$dataset = "cities.csv"
+
+$db = New-DuckDBConnection
+
+$db.sql("CREATE TABLE Cities AS SELECT * FROM '$dataset';")
+
+$db.sql(@"
+PIVOT Cities
+ON Year
+USING sum(Population);
+"@) | Format-Table
+
+$db.CloseDB()
+```
+
+With the table in place, the next step is to execute a pivot operation. This script restructures the data, allowing for a concise year-over-year comparison of city populations, revealing trends that may not be apparent in the raw data.
+
+```
+Country Name          2000 2010 2020
+------- ----          ---- ---- ----
+US      New York City 8015 8175 8772
+US      Seattle        564  608  738
+NL      Amsterdam     1005 1065 115
+```
+
+By seamlessly integrating DuckDB with PowerShell, we unlock powerful data transformation capabilities. This example demonstrates how simple scripts can convert raw data into actionable insights, essential for informed decision-making. Explore these techniques further to harness the full potential of your datasets.
+
+See [pivot.ps1](examples-sql-method/07-pivot.ps1)
+
 ## Examples
 
 Check out the `SQL Introduction` and details for `DuckDB` https://duckdb.org/docs/sql/introduction
