@@ -103,5 +103,4 @@ USING sum(Population);
             }
         }
     }
-
 }
