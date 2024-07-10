@@ -33,7 +33,11 @@ USING sum(Population);
             if ($null -ne $reader) {
                 $reader.Dispose()
             }
-            $duckCommand.Dispose()
+
+            if ($null -ne $duckCommand) {
+                $duckCommand.Dispose()
+            }
+
             $conn.Close()
         }
     }
@@ -61,6 +65,10 @@ USING sum(Population);
             while ($true) {
                 $targetCommand = Read-Host "PSDuckDB"
         
+                if([string]::IsNullOrEmpty($targetCommand)) {
+                    continue
+                }
+
                 if ($targetCommand -in $ExitOn) {
                     break
                 }
@@ -77,7 +85,7 @@ USING sum(Population);
                         $returnData | ConvertTo-Csv
                     } 
                     else {
-                        $returnData
+                        $returnData | Out-Host
                     }
                 }
                 catch {
