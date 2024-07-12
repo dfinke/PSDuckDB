@@ -6,7 +6,7 @@
     RootModule         = 'PSDuckDB.psm1'
 
     # Version number of this module.
-    ModuleVersion      = '0.1.3'
+    ModuleVersion      = '0.1.4'
 
     # ID used to uniquely identify this module
     GUID               = 'da9b09ba-502c-41c4-baf8-7f2777657795'
@@ -57,6 +57,8 @@ PSDuckDB is a PowerShell module that provides seamless integration with DuckDB, 
 
             # The web address of an icon which can be used in galleries to represent this module
             #IconUri = "http://pesterbdd.com/images/Pester.png"
+            IconUri    = 'https://raw.githubusercontent.com/dfinke/PSDuckDB/main/PSDuckDB.png'
+
 
             # The web address of this module's project or support homepage.
             ProjectUri   = "https://github.com/dfinke/PSDuckDB"
