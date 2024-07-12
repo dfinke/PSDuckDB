@@ -13,7 +13,8 @@ USING sum(Population);
         [string]$FileName,
         [string]$Command,
         [switch]$json,
-        [switch]$csv
+        [switch]$csv,
+        [switch]$formatTable
     )
     
     if (![string]::IsNullOrEmpty($Command)) {        
@@ -84,6 +85,9 @@ USING sum(Population);
                     elseif ($csv) {
                         $returnData | ConvertTo-Csv
                     } 
+                    elseif ($formatTable) {
+                        $returnData | Format-Table
+                    }
                     else {
                         $returnData | Out-Host
                     }
