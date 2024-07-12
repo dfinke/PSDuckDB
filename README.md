@@ -1,3 +1,21 @@
+<p align="center">
+  <img src="PSDuckDB.png" width=200/>
+</p>
+
+<p align="center">
+  <a href="https://x.com/dfinke">
+    <img src="https://img.shields.io/twitter/follow/dfinke.svg?style=social&label=Follow%20%40dfinke"></a>
+  <a href="https://youtube.com/@dougfinke">
+    <img src="https://img.shields.io/youtube/channel/subscribers/UCP47ZkO5EDkoI2sr-3P4ShQ"></a>
+</p>    
+
+<p align="center">
+
+  <a href="https://www.powershellgallery.com/packages/PSDuckDB/">
+      <img src="https://img.shields.io/powershellgallery/v/PSDuckDB.svg"></a>
+  <a href="https://www.powershellgallery.com/packages/PSDuckDB/"><img src="https://img.shields.io/powershellgallery/dt/PSDuckDB.svg"></a>
+</p>
+
 # PSDuckDB
 PSDuckDB is a PowerShell module that provides seamless integration with DuckDB, enabling efficient execution of analytical SQL queries directly from the PowerShell environment.
 
