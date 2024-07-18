@@ -1,3 +1,7 @@
+# 0.1.4
+
+- Fixed missing library for MacOS support by adding `libduckdb.dylib`
+
 # 0.1.3
 
 - Check for null in `psduckdb` after `Read-Host`.
