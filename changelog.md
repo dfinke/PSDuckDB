@@ -5,7 +5,7 @@
 # 0.1.3
 
 - Check for null in `psduckdb` after `Read-Host`.
-- Ensure output is written to the console in `Invoke-PSDuckDb.ps1`.
+- Ensure output igs written to the console in `Invoke-PSDuckDb.ps1`.
 
 # 0.1.2
 
