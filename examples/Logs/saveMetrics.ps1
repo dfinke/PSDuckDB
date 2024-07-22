@@ -1,11 +1,14 @@
-'potatoqualitee/PSHelp.Copilot', 'dfinke/psduckdb' | Get-GHMetrics | ConvertTo-Json | Set-Content ./metrics.json
+$jsonFile = "$PSScriptRoot/metrics.json"
+$dbFile = "$PSScriptRoot/metrics.db"
 
-$db = New-DuckDBConnection ./metrics.db
+'powershell/powershell', 'dfinke/psduckdb' | Get-GHMetrics | ConvertTo-Json | Set-Content $jsonFile
+
+$db = New-DuckDBConnection $dbFile
 
 $db.sql(@"
 CREATE TABLE metrics AS
 SELECT * 
-FROM read_json_auto('./metrics.json')
+FROM read_json_auto('$jsonFile')
 "@)
 
 $db.CloseDB()
