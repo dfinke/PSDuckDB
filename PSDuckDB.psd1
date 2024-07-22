@@ -6,7 +6,7 @@
     RootModule         = 'PSDuckDB.psm1'
 
     # Version number of this module.
-    ModuleVersion      = '0.1.3'
+    ModuleVersion      = '0.1.5'
 
     # ID used to uniquely identify this module
     GUID               = 'da9b09ba-502c-41c4-baf8-7f2777657795'
@@ -30,6 +30,7 @@ PSDuckDB is a PowerShell module that provides seamless integration with DuckDB, 
         'Invoke-PSDuckDB'
         'New-DuckDBConnection'
         'Out-DuckData'
+        'Join-Data'
     )
 
     # Aliases to export from this module
