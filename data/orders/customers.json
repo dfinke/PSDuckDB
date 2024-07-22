@@ -1,0 +1,62 @@
+[
+  {
+    "CustomerID": "1",
+    "FirstName": "John",
+    "LastName": "Doe",
+    "Email": "john.doe@example.com",
+    "Phone": "555-1234",
+    "Address": "123 Elm St",
+    "City": "Springfield",
+    "State": "IL",
+    "ZipCode": "62701",
+    "Country": "USA"
+  },
+  {
+    "CustomerID": "2",
+    "FirstName": "Jane",
+    "LastName": "Smith",
+    "Email": "jane.smith@example.com",
+    "Phone": "555-5678",
+    "Address": "456 Oak St",
+    "City": "Greenfield",
+    "State": "IN",
+    "ZipCode": "46140",
+    "Country": "USA"
+  },
+  {
+    "CustomerID": "3",
+    "FirstName": "Bob",
+    "LastName": "Johnson",
+    "Email": "bob.johnson@example.com",
+    "Phone": "555-8765",
+    "Address": "789 Pine St",
+    "City": "Laketown",
+    "State": "WI",
+    "ZipCode": "53001",
+    "Country": "USA"
+  },
+  {
+    "CustomerID": "4",
+    "FirstName": "Alice",
+    "LastName": "Williams",
+    "Email": "alice.williams@example.com",
+    "Phone": "555-4321",
+    "Address": "101 Maple St",
+    "City": "Winterville",
+    "State": "NC",
+    "ZipCode": "28590",
+    "Country": "USA"
+  },
+  {
+    "CustomerID": "5",
+    "FirstName": "Michael",
+    "LastName": "Brown",
+    "Email": "michael.brown@example.com",
+    "Phone": "555-6789",
+    "Address": "202 Birch St",
+    "City": "Somerville",
+    "State": "MA",
+    "ZipCode": "02143",
+    "Country": "USA"
+  }
+]
