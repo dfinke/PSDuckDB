@@ -28,6 +28,12 @@ https://duckdb.org/why_duckdb
 ```powershell
 Install-Module PSDuckDB 
 ```
+
+## The Video
+PowerShell Meets DuckDB Integrate, Query, and Analyze Data Seamlessly
+
+<a href="https://youtu.be/jCnRXp2z4Uc"><img src="https://img.youtube.com/vi/jCnRXp2z4Uc/0.jpg" width="475">
+
 ## Why DuckDB
 There are many database management systems (DBMS) out there. But there is no one-size-fits all database system. All take different trade-offs to better adjust to specific use cases. DuckDB is no different.
 
