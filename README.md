@@ -248,6 +248,10 @@ Units Region Price   State
   712 South  508.55  Delaware
 ```
 
+## DuckDB.NET
+
+PSDuckDB leverages the DuckDB.NET bindings, developed by Giorgi. You can explore this work on GitHub at https://github.com/Giorgi/DuckDB.NET.
+
 ## Development
 
 Please also refer the the [Contribution Guide](CONTRIBUTING.md).
