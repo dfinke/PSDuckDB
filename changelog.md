@@ -1,6 +1,7 @@
 # 0.1.5
 
 - Update DuckDB.NET to  1.1.0.1
+- DuckDB - https://duckdb.org/2024/09/09/announcing-duckdb-110
 
 # 0.1.4
 
