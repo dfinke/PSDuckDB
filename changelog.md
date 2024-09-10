@@ -1,3 +1,12 @@
+# 0.1.5
+
+- Update DuckDB.NET to  1.1.0.1
+- DuckDB - https://duckdb.org/2024/09/09/announcing-duckdb-110
+
+# 0.1.4
+
+- Update PSDuckDB README.md with badges and image
+
 # 0.1.3
 
 - Check for null in `psduckdb` after `Read-Host`.
